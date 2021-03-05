@@ -1,0 +1,229 @@
+/* General */
+@font-face {
+    font-family: Grover-Regular;
+    src: url("../fonts/Grover-Regular.ttf");
+}
+@font-face {
+    font-family: Grover-Bold;
+    src: url("../fonts/Grover-Bold.ttf");
+}
+@font-face {
+    font-family: Grover-Semi-Bold;
+    src: url("../fonts/Grover-Semi-Bold.ttf");
+}
+@font-face {
+    font-family: Grover-Black;
+    src: url("../fonts/Grover-Black.ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f6f5f5;
+    font-family: Grover-Regular;
+}
+
+/* Home Section */
+#start {
+    width: 100vw;
+    height: 95vh;
+    background-image: url("../images/bg.png");
+    background-size: cover;
+}
+
+nav {
+    height: 7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8e8e8e;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.2);
+    padding: 0 200px;
+    color: #f6f5f5;
+}
+
+#nav-title {
+    font-size: x-large;
+}
+
+#nav-menu {
+    font-size: large;
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    cursor: pointer;
+    margin: 0 25px;
+}
+
+#intro-text p:nth-child(1) {
+    color: #8e8e8e;
+    font-size: x-large;
+    margin: 0;
+}
+
+#intro-text p:nth-child(2) {
+    color: #404040;
+    font-family: Grover-Bold;
+    font-size: 64px;
+    letter-spacing: 2px;
+    margin: 15px 0 50px;
+}
+
+#intro-text p:nth-child(3) {
+    color: #8e8e8e;
+    font-size: xx-large;
+    margin: 0;
+}
+
+#intro-text p:nth-child(4) {
+    color: #8e8e8e;
+    font-size: xx-large;
+    margin: 5px 0 25px;
+}
+
+.myButton {
+    cursor: pointer;
+    font-size: 24px;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 2px solid #8e8e8e;
+    color: #8e8e8e;
+    padding: 12px 48px;
+}
+
+.myButton:hover {
+    background-color: #8e8e8e;
+    color: #f6f5f5;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+#intro-text {
+    position: absolute;
+    left: 11%;
+    top: 20%;
+}
+
+#svg-big {
+    height: 80vh;
+    position: absolute;
+    left: 33%;
+    top: 10%;
+}
+
+/* About Me */
+#about-me {
+    width: 69%;
+    height: 333px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    margin: -5% auto 25px;
+    position: relative; /* box to front */
+    display: grid; /* REFERENCE */
+    grid-template-columns: 30% 70%;
+}
+
+#img-small { /* SKIP !!!!!! */
+    height: 100%;
+    display: flex;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#svg-small {
+    height: 90%;
+    display: flex;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#about-text {
+    padding-right: 75px;
+}
+
+#about-text p:nth-child(1){
+    color: #404040;
+    font-size: x-large;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 10px;
+}
+
+#about-text p:nth-child(2){
+    color: #404040;
+    font-size: large;
+    font-weight: bold;
+    margin: 0;
+}
+
+#about-text p:nth-child(3){ 
+    color: #8E8E8E;
+    margin-top: 20px;
+}
+
+.myButtonSmall {
+	cursor: pointer;
+    font-family: Grover-Regular;
+    font-size: large;
+	background-color: transparent;
+	border-radius: 6px;
+    border: 2px solid #8E8E8E;
+    color: #8E8E8E;
+	padding: 12px 25px;
+}
+
+.myButtonSmall:hover { /* does not work? copying helped?! */
+    background-color: #8E8E8E;
+    color: white;
+}
+
+.myButtonSmall:active {
+	position: relative;
+	top: 1px;
+}
+
+/* Footer */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+    background-color: #8E8E8E;
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.2);
+    padding: 0px 200px;
+    font-size: large;
+    color: #F6F5F5;
+}
+
+#to-top span {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #FAF9F9;
+    border-right: 2px solid #FAF9F9;
+    transform: rotate(-135deg);
+    cursor: pointer; 
+}
+
+/* JS Text Animation */
+#intro-text span {
+    opacity: 0;
+    transition: all 1s ease;
+    transform: translateY(50px);
+    display: inline-block;
+}
+
+#intro-text span.fade {
+    opacity: 1;
+    transform: translateY(0px); /* does not work, because span is default inline-element -> set to inline-block: gets the ability to float around */ 
+}
+
+#intro-text span.fixedWidth { /* BUGFIX */
+    width: 15px;
+}
